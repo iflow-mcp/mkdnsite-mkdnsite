@@ -1,4 +1,4 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 import { resolve } from 'node:path'
 import { access, readFile } from 'node:fs/promises'
 import { resolveConfig } from './config/defaults.ts'
@@ -89,7 +89,7 @@ export function parseArgs (args: string[]): ParsedArgs {
       if (isNaN(val) || val < 0) { console.error('Error: --cache-max-age must be a non-negative integer'); process.exit(1) }
       result.cache = { ...(result.cache ?? {}), maxAge: val }
     } else if (arg === '--cache-max-age-markdown') {
-      const val = parseInt(args[++i], 10)
+      const val = parseInt(args[++i] ?? '', 10)
       if (isNaN(val) || val < 0) { console.error('Error: --cache-max-age-markdown must be a non-negative integer'); process.exit(1) }
       result.cache = { ...(result.cache as object ?? {}), maxAgeMarkdown: val }
     } else if (arg === '--cache-swr') {

@@ -1,0 +1,1 @@
+{"serverConfig": "{\"mcpServers\":{\"mkdnsite\":{\"command\":\"npx\",\"args\":[\"-y\",\"@iflow-mcp/mkdnsite-mkdnsite\",\"mcp\",\"${content_dir}\"],\"values\":{\"content_dir\":{\"type\":\"string\",\"description\":\"文档目录路径\",\"default\":\"./content\"}}}}}"}
